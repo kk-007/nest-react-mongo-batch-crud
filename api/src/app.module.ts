@@ -13,12 +13,9 @@ import { PlanController } from './plan/plan.controller';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '../..', 'client', 'dist'),
     }),
-    MongooseModule.forRoot(
-      'mongodb+srv://root:root@free.esed3gy.mongodb.net/',
-      {
-        dbName: 'holocene',
-      },
-    ),
+    MongooseModule.forRoot(process.env.MONGO_SRV, {
+      dbName: process.env.MONGO_DB,
+    }),
     MongooseModule.forFeature([{ name: 'plan', schema: PlanSchema }]),
   ],
   controllers: [AppController, PlanController],

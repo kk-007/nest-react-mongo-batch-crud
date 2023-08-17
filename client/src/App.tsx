@@ -278,7 +278,7 @@ const App: React.FC = () => {
     {
       title: "stackable",
       dataIndex: "stackable",
-      render: (_, record: { _id: string }) => (
+      render: (_, record) => (
         <Checkbox
           defaultChecked={_}
           value={_}
@@ -292,7 +292,7 @@ const App: React.FC = () => {
     {
       title: "tiltable",
       dataIndex: "tiltable",
-      render: (_, record: { _id: string }) => (
+      render: (_, record) => (
         <Checkbox
           defaultChecked={_}
           value={_}
@@ -306,7 +306,7 @@ const App: React.FC = () => {
     {
       title: "operation",
       dataIndex: "operation",
-      render: (_, record: { _id: string }) =>
+      render: (_, record) =>
         dataSource.length >= 1 ? (
           <Popconfirm
             title="Sure to delete?"
