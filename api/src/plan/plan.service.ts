@@ -16,13 +16,10 @@ export class PlanService {
           await newRecord.save();
           break;
         case OperationType.UPDATE:
-          await this.planModel.findByIdAndUpdate(
-            operation.data.id,
-            operation.data,
-          );
+          await this.planModel.findByIdAndUpdate(operation.id, operation.data);
           break;
         case OperationType.DELETE:
-          await this.planModel.findByIdAndDelete(operation.data.id);
+          await this.planModel.findByIdAndDelete(operation.id);
           break;
       }
     }
